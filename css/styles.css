@@ -32,6 +32,25 @@ form .username{
     position: relative;
     border-bottom: 2px solid #adadad;
     margin: 30px 0;
+    transition: margin-top 0.3s ease; /* Agregamos transición para suavizar el movimiento */
+}
+
+form .username input:focus + label {
+    margin-top: -30px; /* Mover el texto hacia arriba cuando el campo tiene foco */
+}
+
+form .username label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    pointer-events: none;
+    transition: margin-top 0.3s ease, font-size 0.3s ease; /* Agregamos transición para suavizar el movimiento y el cambio de tamaño */
+}
+
+form .username input:focus ~ label {
+    margin-top: -10px; /* Mover el texto hacia arriba cuando el campo tiene foco */
+    font-size: 12px; /* Cambiar el tamaño de la fuente cuando el campo tiene foco */
 }
 
 .username input{
